@@ -1,0 +1,99 @@
+import java.util.Scanner;
+
+public class Entry {
+	
+	private static Scanner scan = new Scanner(System.in);
+   
+	public static void main(String[] args) {
+		//Main Menu
+		System.out.print("What do want to do? \n");
+		System.out.print("----------------------- \n");
+		System.out.print("calculator \n");
+		System.out.print("result \n");
+		System.out.print("--------------------------------- \n");
+		String menu = scan.next();
+		System.out.print("--------------------------------- \n");
+		
+		 switch (menu) {
+	      case "calculator":
+	        calc();
+
+	      case "result":
+	    	  res();
+	          
+	      default:
+	        System.out.print("Wrong choice!");
+	        main(args);
+		 }
+	}
+		
+		
+
+		
+    public static void calc() {
+    //Calculator
+	System.out.print("plese enter a \n");
+	int a = scan.nextInt();
+	
+	System.out.print("plese enter oprator(+ - * /) \n");
+	String c = scan.next();
+	System.out.print("plese enter b \n");
+	int b = scan.nextInt();
+	double answer;
+
+    switch (c) {
+      case "+":
+        answer = a + b;
+        break;
+
+      case "-":
+          answer = a - b;
+        break;
+        
+      case "*":
+          answer = a * b;
+        break;
+
+      case "/":
+          answer = a / b;
+        break;
+
+      default:
+        System.out.print("Wrong operator!");
+        return;
+    }
+
+	System.out.print(answer + "\n");
+	System.out.print("--------------------------------- \n");
+	main(null);
+	
+
+	}
+    
+    public static void res() {
+    	//Results
+    	System.out.print("WELCOME TO REULT CALCULATOR \n");
+    	System.out.print("--------------------------------- \n");
+    	System.out.print("What did you get from Phycis?(up to 150 score) \n");
+    	int Physics = scan.nextInt();
+    	System.out.print("What did you get from Chemistry?(up to 150 score) \n");
+    	int Chemistry = scan.nextInt();
+    	System.out.print("What did you get from Biology?(up to 150 score) \n");
+    	int Biology = scan.nextInt();
+    	
+    	int Result = Physics +  Chemistry + Biology;
+    	
+    	double totalResult = ((Physics +  Chemistry + Biology) * 100) / 450; 
+    	
+    	System.out.print("--------------------------------- \n");
+    	
+    	System.out.print("Physics: " + Physics + "\n");
+    	System.out.print("Chemistry: " + Chemistry + "\n");
+    	System.out.print("Biology: " + Biology  + "\n");
+    	System.out.print("Result: " + Result + "\n");
+    	System.out.print("Percentage: " + totalResult + "%" + "\n");
+    	System.out.print("--------------------------------- \n");
+    	main(null);
+    	
+    }
+}
